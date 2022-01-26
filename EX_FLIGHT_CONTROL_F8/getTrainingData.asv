@@ -59,21 +59,18 @@ if ENSEMBLE_DATA == 0
     figure;
     plot(tspan,u); % plot control inputs
     title('Applied Control Input, $u(t)$', 'Interpreter','latex')
-    xlabel('Time, $t$', 'Interpreter', 'latex')
-    ylabel('Applied Control Input, $u(t)$', 'Interpreter', 'latex')
-    set(gca,'LineWidth',1, 'FontSize',14)
-    set(gcf,'Position',[100 100 300 200])
-    set(gcf,'PaperPositionMode','auto')
+    xlabel('Time, $t$')
+    ylabel('Applied Control Input, $u(t)$')
     
     figure;
     plot(t,x,'LineWidth',1.5)
-    xlabel('Time, $t$', 'Interpreter', 'latex')
+    xlabel('Time, $t$')
     ylabel('States, $x_i(t)$', 'Interpreter', 'latex')
-    legend('angle of attack','pitch angle', 'pitch rate', 'Location','best')
-    title('State Evolution, $\mathbf{x}(t)$', 'Interpreter','latex')
+    legend('angle of attack','pitch angle', 'pitch rate')
     set(gca,'LineWidth',1, 'FontSize',14)
     set(gcf,'Position',[100 100 300 200])
     set(gcf,'PaperPositionMode','auto')
+    title('State Evolution, $\mathbf{x}(t)$', 'Interpreter','latex')
     
     xv = x(Ntrain+1:end,:);
     x = x(1:Ntrain,:);

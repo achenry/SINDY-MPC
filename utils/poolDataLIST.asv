@@ -81,18 +81,24 @@ end
 
 
 output = yout;
-% newout(1) = {''};
-varnames = {'Canditate Functions'};
+newout(1) = {''};
 for k=1:length(yin)
-    % newout{1,1+k} = [yin{k},'dot'];
-    varnames{end + 1} = [yin{k},'dot'];
+    newout{1,1+k} = [yin{k},'dot'];
 end
 % newout = {'','xdot','ydot','udot'};
 for k=1:size(ahat,1)
-    newout(k,1) = output(k);
+    newout(k+1,1) = output(k);
     for j=1:length(yin)
-        newout{k,1+j} = ahat(k,j);
+        newout{k+1,1+j} = ahat(k,j);
     end
 end
 % newout
-coefficients = cell2table(newout, 'VariableNames', varnames)
+t = table(newout);
+varnames = table2cell(t(1, :));
+varnames = varnames{1};
+varnames{1} = 'Canditate Functions';
+for v = 1:length(varnames)
+    t(1, v) = varnames{v};
+end
+'SI1NDYc Coefficients';
+'Canditate Functions';

@@ -53,7 +53,7 @@ for ct = 1:Duration/Ts
     uopt = fmincon(COSTFUN,uopt,[],[],[],[],LB,UB,CONSFUN,options);
     
     % Integrate system
-    xhat = rk4u(@F8Sys,xhat,uopt(1),Ts/10,10,[],0); % Increase time resolution for simulation & keep control constant
+    xhat = rk4u(@F8Sys, xhat,u opt(1),Ts/10,10,[],0); % Increase time resolution for simulation & keep control constant
     xHistory(:,ct+1) = xhat;
     uHistory(:,ct+1) = uopt(1);
     tHistory(:,ct+1) = ct*Ts;

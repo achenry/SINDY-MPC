@@ -12,7 +12,7 @@ Nvar = 3;
 %% Generate Data %{'sine2', 'chirp','prbs', 'sphs'}
 InputSignalType = 'sine3';%'sine2'; sine3, %prbs; noise; sine2; sphs; 
 ONLY_TRAINING_LENGTH = 1;
-ENSEMBLE_DATA = 0;
+ENSEMBLE_DATA = 0; % don't use ensemble learning method
 getTrainingData
 u = u';
 
