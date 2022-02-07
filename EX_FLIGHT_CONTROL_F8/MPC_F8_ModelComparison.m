@@ -16,7 +16,7 @@ addpath('../utils');
 %% Load Models
 Nvar = 3;
 InputSignalTypeModel = 'sine3';             % Use actuation to collect training data
-InputSignalTypeModel_Validation = 'sine2';  % Use actuation to collect validation data to test for generalization
+InputSignalTypeModel_Validation = 'sine3';  % Use actuation to collect validation data to test for generalization
 
 % DelayDMDc
 ModelTypeDMDc = 'DMDc'; % Model: DelayDMDc , DMDc

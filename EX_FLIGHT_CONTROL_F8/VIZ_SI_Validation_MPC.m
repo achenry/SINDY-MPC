@@ -58,7 +58,7 @@ hold on
 % Show prediction over validation stage
 switch select_model
     case 'DMDc'
-        pt(2) = plot(tB,xB(:,1),'-.','Color',ModelColors(1,:,1),'LineWidth',2,'Parent',ax2);
+        pt(2) = plot(tB_DMD,xB_DMD(:,1),'-.','Color',ModelColors(1,:,1),'LineWidth',2,'Parent',ax2);
         plot(tB,xB(:,2),'-.','Color',ModelColors(2,:,1),'LineWidth',2,'Parent',ax2);
         plot(tB,xB(:,3),'-.','Color',ModelColors(3,:,1),'LineWidth',2,'Parent',ax2);
     case 'DelayDMDc'
@@ -66,9 +66,9 @@ switch select_model
         plot(tB,xB(:,2),'-.','Color',ModelColors(2,:,1),'LineWidth',2,'Parent',ax2);
         plot(tB,xB(:,3),'-.','Color',ModelColors(3,:,1),'LineWidth',2,'Parent',ax2);
     case 'SINDYc'
-        pt(2) = plot(tC,xC(:,1),'-.','Color',ModelColors(1,:,2),'LineWidth',2,'Parent',ax2);
-        plot(tC,xC(:,2),'-.','Color',ModelColors(2,:,2),'LineWidth',2,'Parent',ax2);
-        plot(tC,xC(:,3),'-.','Color',ModelColors(3,:,2),'LineWidth',2,'Parent',ax2);
+        pt(2) = plot(tB_SINDY,xB_SINDY(:,1),'-.','Color',ModelColors(1,:,2),'LineWidth',2,'Parent',ax2);
+        plot(tB_SINDY,xB_SINDY(:,2),'-.','Color',ModelColors(2,:,2),'LineWidth',2,'Parent',ax2);
+        plot(tB_SINDY,xB_SINDY(:,3),'-.','Color',ModelColors(3,:,2),'LineWidth',2,'Parent',ax2);
     case 'NARX'
         pt(2) = plot(tA(1:end),xD(:,1),'-.','Color',ModelColors(1,:,3),'LineWidth',2,'Parent',ax2);
         plot(tA(1:end),xD(:,2),'-.','Color',ModelColors(2,:,3),'LineWidth',2,'Parent',ax2);

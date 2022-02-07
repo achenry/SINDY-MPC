@@ -56,9 +56,9 @@ c = zeros(2*N,1);
 % k+1 to k+N
 duk = u(1)-uold;
 for ct=1:N
-    c(2*ct-1) = -duk+LBdu; 
-    c(2*ct) = duk-UBdu;
-    if ct<N
+    c(2 * ct - 1) = -duk + LBdu; 
+    c(2 * ct) = duk - UBdu;
+    if ct < N
         duk = u(ct+1)-u(ct);
     end
 end
