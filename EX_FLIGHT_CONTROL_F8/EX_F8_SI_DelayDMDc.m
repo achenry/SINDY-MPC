@@ -37,6 +37,8 @@ X   = x - repmat(xmean,[T 1]);
 Hx  = getHankelMatrix_MV(X,1);
 numOutputs = size(Hx,1); numInputs = size(Hu,1); numVar = 3;
 r1 = size(Hx,1); r2 = size(Hx,1);
+
+% compute best-fit A and B matrices using SVD decomposition
 [sysmodel_DMDc,U,Up] = DelayDMDc_MV(Hx,Hu,size(Hx,1),size(Hx,1),dt,size(Hx,1),size(Hu,1),2);
 
 %% Prediction over training phase

@@ -1,6 +1,6 @@
 function [sysmodel_DMDc,U,Up] = DelayDMDc_MV(Hx,Hu,r1,r2,dt,numOutputs,numInputs,numVar,X,Xp)
 stackmax = size(Hx,1);
-stackmax = stackmax/numVar;
+stackmax = stackmax / numVar;
 
 if nargin < 10
     X = Hx(:,1:end-1);
@@ -16,8 +16,11 @@ if isempty(idx)==1
 else 
     r1 = idx-1;
 end
-U = U(:,1:r1);S = S(1:r1,1:r1);V = V(:,1:r1);
-G = Xp*V*S^(-1)*U';
+U = U(:,1:r1);
+S = S(1:r1,1:r1);
+V = V(:,1:r1);
+G = Xp * V * S^(-1)*U';
+
 [Up,Sp,Vp] = svd(Xp,'econ'); 
 idx = find(diag(Sp)<1e-10,1,'first'); 
 if isempty(idx)==1
