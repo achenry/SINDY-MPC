@@ -11,8 +11,8 @@ ylimval = [-2 1];
 Jmax = max(cumsum(Results(1).J));
 
 figure;
-xlabel(gca,'Time')
-ylabel(gca,'xi')
+xlabel(gca,'Time, $t$', 'Interpreter', 'latex')
+ylabel(gca,'$x_i$', 'Interpreter', 'latex')
 set(gca,'LineWidth',1, 'FontSize',14)
 set(gcf,'Position',[100 100 450 200])
 set(gcf,'PaperPositionMode','auto')
