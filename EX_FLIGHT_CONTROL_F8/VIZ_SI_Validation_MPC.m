@@ -59,8 +59,8 @@ hold on
 switch select_model
     case 'DMDc'
         pt(2) = plot(tB_DMD,xB_DMD(:,1),'-.','Color',ModelColors(1,:,1),'LineWidth',2,'Parent',ax2);
-        plot(tB,xB(:,2),'-.','Color',ModelColors(2,:,1),'LineWidth',2,'Parent',ax2);
-        plot(tB,xB(:,3),'-.','Color',ModelColors(3,:,1),'LineWidth',2,'Parent',ax2);
+        plot(tB_DMD,xB_DMD(:,2),'-.','Color',ModelColors(2,:,1),'LineWidth',2,'Parent',ax2);
+        plot(tB_DMD,xB_DMD(:,3),'-.','Color',ModelColors(3,:,1),'LineWidth',2,'Parent',ax2);
     case 'DelayDMDc'
         pt(2) = plot(tB,xB(:,1),'-.','Color',ModelColors(1,:,1),'LineWidth',2,'Parent',ax2);
         plot(tB,xB(:,2),'-.','Color',ModelColors(2,:,1),'LineWidth',2,'Parent',ax2);
@@ -97,7 +97,7 @@ print('-depsc2', '-painters', '-cmyk', '-loose',[figpath,'EX_',SystemModel,'_MPC
 
 
 %% Dummy plot for legend // Models
-close all
+% close all
 clear ph
 figure; hold on, box on
 for jM = 1:Nmodels
@@ -112,7 +112,7 @@ set(gcf,'PaperPositionMode','auto')
 print('-depsc2', '-painters', '-cmyk', '-loose',[figpath,'EX_',SystemModel,'_MPC_',select_model,'_legend','_N_',num2str(N),'.eps']);
 
 %% Dummy plot for legend
-close all
+% close all
 clear ph lh
 figure; hold on, box on
 ccolors = get(gca,'colororder');
